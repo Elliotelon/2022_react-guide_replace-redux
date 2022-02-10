@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export const ProductsContext = React.createContext({
   products: [],
   toggleFav: (id) => {},
-
 });
 
 export default (props) => {
@@ -46,8 +45,11 @@ export default (props) => {
       return updatedProducts;
     });
   };
+
   return (
-    <ProductsContext.Provider value={{ products: productsList, toggleFav: toggleFavorite }}>
+    <ProductsContext.Provider
+      value={{ products: productsList, toggleFav: toggleFavorite }}
+    >
       {props.children}
     </ProductsContext.Provider>
   );
